@@ -1,0 +1,111 @@
+
+
+
+
+
+
+
+Data Science Specialization : Capstone Presentation
+========================================================
+author: Tanmoy Rath
+date: January 9th, 2020
+autosize: true
+transition: rotate
+type: section
+
+<span style="color:black;">This presentation is about a Shiny app i.e. built for the completion of the specialization.</span>
+
+<span style="color:red;">Shiny App URL :</span> http://tanmoy.shinyapps.io/capstone/
+
+<style>
+.section .reveal h1 {
+   color: black;
+}
+.section .reveal p {
+   color: black;
+}
+</style>
+
+
+
+
+
+
+
+Shiny App : Overview
+========================================================
+type: prompt
+- <small>The specialization required to build an app in Shiny framework, which predicts the next word when a user types in a phrase (multiple words).</small>
+![alt text](predict.bmp)
+- <small>Typing in the white box and hitting space, causes word predictions to appear in the panel below. You can try full screen mode for a better view.</small>
+
+
+
+
+
+
+
+How it works : The Back-off model
+========================================================
+type: prompt
+- <small>The corpus documents provided were analyzed and a list of 2-grams and 3-grams were created.</small>
+- <small>The App takes the user input and extracts the last 2 words from it. Then it matches that in a list of 3-grams to find the next word.</small>
+- <small>In case of no match, the App extracts the last word from user input, and matches that in a list of 2-grams to find the next word. This is known as The Back-off model.</small>
+- <small>In other words, it backs-off to a lower order n-gram in case of no match.</small>
+
+The App predicts, when after typing, you hit &lt;spacebar&gt;.
+
+The results are ordered by frequencies in descending order and displayed on the panel.
+
+
+
+Key Strengths
+========================================================
+type: sub
+- <small>App takes very small amount of time to load from server.</small>
+![alt text](load.bmp)
+- <small>The app searches through 3.3 million 2-grams and 4.5 million 3-grams and predicts results in 2-3 seconds.</small>
+- <small>It consumes only around 210 Mb of memory.</small>
+![alt text](diag.bmp)
+
+<small>NOTE: The results shown above would match most systems of today, however in certain cases they may vary.</small>
+
+<style>
+.sub .reveal .state-background {
+   background: #E7E8EA;
+}
+</style>
+
+
+
+
+
+
+
+Limitations & Conclusion
+========================================================
+type: sub
+- <small>The challenges faced to build the app were mostly pre-processing the corpus correctly, improving accuracy & response time, adhering to constraints of http://shinyapps.io to host properly, etc. </small>
+- <small>However, the words not present in corpus won't show up in results. One solution is to use a diverse set of corpora, so that almost all the english words are present. It also ensures we get a diverse set of contexts for higher order n-grams.</small>
+- <small>However, in any scenario, if the application is not intelligently scaled, improving performance will almost always remain a challenge.</small>
+
+<span style="color:red;">Shiny App URL :</span> http://tanmoy.shinyapps.io/capstone/
+
+&nbsp;
+<img src="tyn.png" style="background-color:transparent; border:0px; box-shadow:none;"></img>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
