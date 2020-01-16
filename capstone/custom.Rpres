@@ -1,0 +1,451 @@
+Customizing R-presentation
+========================================================
+author: author: someone
+date: date: somedate
+autosize: true
+transition: rotate
+type: section
+
+<pre style="padding:1em;">
+&lt;style&gt;
+.section .reveal h1 {
+   color: black;
+}
+.section .reveal p {
+   color: red;
+}
+&lt;/style&gt; However, this overrides all section slides
+</pre>
+
+<style>
+.section .reveal h1 {
+   color: black;
+}
+.section .reveal p {
+   color: red;
+}
+</style>
+https://www.google.com/
+
+
+
+
+
+
+
+Change background color
+========================================================
+
+- Cover slide
+
+<pre style="padding:1em;">
+Customizing R-presentation
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+author: author: someone
+date: date: somedate
+autosize: true
+transition: rotate
+
+&lt;style&gt;
+.section .reveal .state-background {
+   background: #E7E8EA;
+}
+&lt;/style&gt;
+</pre>
+
+
+
+
+
+
+
+Change background color
+========================================================
+- Any other slide
+
+<pre style="padding:1em;">
+Some other slide
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+type: anyword
+
+&lt;style&gt;
+.anyword .reveal .state-background {
+   background: #E7E8EA;
+}
+&lt;/style&gt;
+</pre>
+
+- See that you do not specify a default type.
+
+- anyword is any english word but not a default type
+
+
+
+
+
+
+
+Default types
+========================================================
+- There are some default types with specific background colors.
+
+<pre style="padding:1em;">
+Some slide
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+type: section
+type: sub-section
+type: prompt
+type: alert
+</pre>
+
+- If you override a single type, e.g. prompt, styles of all slides having type as prompt will be overridden.
+
+
+
+
+
+
+
+Text formatting
+========================================================
+Enclose a piece of text in span tags, then set styles locally.
+
+<span style="color:red;">This text appears red.</span>
+<pre style="padding:1em;">
+&lt;span style&#61;"color:red;"&gt;This text appears red.&lt;/span&gt;
+</pre>
+
+Combine multiple styles<br/>
+<span style="font-weight:bold; color:red; font-size:50%; background-color:yellow;">This text appears red, bold and small with yellow background</span>
+<pre style="padding:1em;">
+&lt;span style&#61;"font-weight:bold; color:red; font-size:50%; background-color:yellow;"&gt;This text appears red, bold and small with yellow background&lt;/span&gt;
+</pre>
+
+
+
+
+
+
+
+More Text formatting
+========================================================
+~~Pay attention to this!~~
+<pre style="padding:1em;">
+~~Pay attention to this!~~
+</pre>
+
+This code, colors all text in all slides, blue
+<pre style="padding:1em;">
+&lt;style&gt;
+.reveal section p {
+  color: blue;
+}
+&lt;/style&gt;
+</pre>
+
+<small>This text appears small</small>
+<pre style="padding:1em;">
+&lt;small&gt;This text appears small&lt;/small&gt;
+</pre>
+
+
+
+
+
+
+
+This heading is h3
+========================================================
+type: exclaim
+This slide uses type as exclaim
+<pre style="padding:1em; color:white;">
+This heading is h3
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+type: exclaim
+
+This slide uses type as exclaim
+
+&lt;style&gt;
+.exclaim .reveal .state-background {
+  background: black;
+}
+
+.exclaim .reveal h3,
+.exclaim .reveal p {
+  color: white;
+}
+&lt;/style&gt;
+</pre>
+
+<style>
+.exclaim .reveal .state-background {
+  background: black;
+}
+
+.exclaim .reveal h3,
+.exclaim .reveal p {
+  color: white;
+}
+</style>
+
+
+
+
+
+
+
+Specifying a Custom Font (contd.)
+========================================================
+
+If you use type as section, you get h1 and p.
+
+<pre style="padding:1em;">
+&lt;style&gt;
+.section .reveal .state-background {
+  background: black;
+}
+
+.section .reveal h1,
+.section .reveal h2,
+.section .reveal p {
+  color: white;
+}
+&lt;/style&gt;
+</pre>
+
+The last style on section overrides all section styles occuring previously.
+
+
+
+
+
+
+
+
+
+Links to build further
+========================================================
+
+https://support.rstudio.com/hc/en-us/articles/200486468-Authoring-R-Presentations
+
+https://support.rstudio.com/hc/en-us/articles/200714013-Slide-Transitions-and-Navigation
+
+https://support.rstudio.com/hc/en-us/articles/200532307
+
+https://support.rstudio.com/hc/en-us/articles/200714023
+
+https://rstudio-pubs-static.s3.amazonaws.com/27777_55697c3a476640caa0ad2099fe914ae5.html#/
+
+
+
+
+
+
+
+
+
+Specifying a Custom Font (contd.)
+========================================================
+<small>
+The semantics of this are the same as for a CSS font-family (i.e. you can specify a comma separated list of alternate fonts).
+Note that if you use the default Lato font your presentation is guaranteed to always display with this font (since it is embedded within the presentation). However, if you specify an alternate font, that font must be available on the system where the presentation is displayed (otherwise a fallback font will be utilized).
+You can also import web fonts from a custom URL using the font-import field. For example:
+</small>
+<pre style="padding:1em;">
+My Presentation
+&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+author: author:
+font-import: http://fonts.googleapis.com/css?family=Risque
+font-family: 'Risque'
+</pre>
+<small>While importing a web font provides assurance that it will be available wherever the presentation is displayed, it does require an internet connection so is not a good solution where offline display of the presentation is required.</small>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+First Slide
+========================================================
+
+For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+
+
+
+
+
+Logic behind : Continuation Probabilities
+========================================================
+type: exclaim
+- <small> The continuation probabilities are defined as follows, e.g. if you type:</small>
+
+>"its water is so transparent that "
+
+<small>the probability of next word as "the" is calculated as:</small>
+
+![alt text](contprob.bmp)
+
+- <small>Now, since for a particular input (denominator being same), the sorting order of continuation probabilities will be the sorting order of their frequencies. Hence the predicted results remain same, as if predicting by only frequencies.</small>
+
+
+
+
+
+
+App Limitations
+========================================================
+type: prompt
+
+- <small>The App reads data from two files : 2grams.txt and 3grams.txt</small>
+
+- <small>Each is a list of respective n-grams with their frequencies.</small>
+
+- <small>The App takes the user input and extracts the last 2-grams from it. Then it matches that in 3grams.txt to find the next word.</small>
+
+- <small>In case of no match, the App extracts the last 1-gram from user input, and matches that in 2grams.txt to find the next word. This is known as The Back-off model.</small>
+
+- <small>In other words, it backs-off to a lower order n-gram in case of no match.</small>
+
+- <small>Each of the 3 panels show upto 500 words with their frequencies. This amounts to showing 1000 values, which is the maximum limit of R. The 3 panels alltogether show 1500 words with frequencies (i.e. 3000 values).</small>
+
+
+
+
+
+
+
+
+
+
+
+
+Overview
+========================================================
+type: sub-section
+- <small>As part of the specialization, it was required to build an app (in Shiny framework) which predicts the next word when a user types in a phrase (multiple words), as it happens in google's search bar.</small>
+
+- <small>The App uses a simple back-off model to predict the next word of the user's input.</small>
+
+
+<span class="midcenter"><img src="nbmp3.bmp" style="width:45%;"></img></span>
+
+<table border=0><tr>
+<td>e.g.</td>
+<td>hgv</td>
+</tr></table>
+
+
+
+
+
+How it works : 2
+========================================================
+The App reads data from 2 files viz.
+- 2grams.txt  ->  a list of 2-grams with their frequencies
+- 3grams.txt  ->  a list of 3-grams with their frequencies
+
+The App takes the user input and extracts the last 2-grams from it. Then it matches that in 3grams.txt to find the next word.
+
+In case of no match, the App extracts the last 1-gram from user input, and matches that in 2grams.txt to find the next word.
+
+In other words, it backs-off to a lower order n-gram in case of no match.
+
+<style>
+.footer {
+    color: black;
+    background: #E8E8E8;
+    position: fixed;
+    top: 90%;
+    text-align:center;
+    width:100%;
+}
+</style>
+
+<div class="footer">This block of text will appear with the 'footer' style</div>
+
+
+
+
+
+First Slide
+========================================================
+type: section
+incremental: true
+For more details on authoring R presentations please visit <https://support.rstudio.com/hc/en-us/articles/200486468>.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+Slide With Code
+========================================================
+type: sub-section
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+type: alert
+```{r, echo=FALSE}
+cars
+```
+
+Slide With Plot
+========================================================
+incremental: true
+```{r, echo=FALSE}
+plot(cars)
+```
+
